@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portal de Notícias - Bootstrap 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+      /* --- PALETA DE CORES PERSONALIZADA --- */
+      :root {
+        --cor-escura: #2E073F;   /* Roxo Profundo */
+        --cor-media: #7A1CAC;    /* Roxo Vibrante */
+        --cor-clara: #AD49E1;    /* Lilás Aceso */
+        --cor-fundo: #EBD3F8;    /* Lilás Pastel (Fundo) */
+      }
+
+      body {
+        padding-top: 70px;
+        background-color: var(--cor-fundo); /* Aplica o fundo pastel no site */
+      }
+      
+      /* Navbar e Rodapé com o Roxo Mais Escuro */
+      .bg-custom-dark {
+        background-color: var(--cor-escura) !important;
+      }
+
+      /* Hero Section limpa: Agora usa um degradê CSS moderno com as cores da paleta */
+      .hero-section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        background: linear-gradient(135deg, var(--cor-escura), var(--cor-media)) !important;
+      }
+
+      /* Botões Principais */
+      .btn-custom-primary {
+        background-color: var(--cor-media) !important;
+        border-color: var(--cor-media) !important;
+        color: white !important;
+      }
+      .btn-custom-primary:hover {
+        background-color: var(--cor-escura) !important;
+        border-color: var(--cor-escura) !important;
+      }
+
+      /* Botões Secundários/Outline */
+      .btn-custom-outline {
+        color: var(--cor-media) !important;
+        border-color: var(--cor-media) !important;
+      }
+      .btn-custom-outline:hover {
+        background-color: var(--cor-media) !important;
+        color: white !important;
+      }
+
+      /* Headers e Badges */
+      .badge-custom {
+        background-color: var(--cor-clara) !important;
+        color: white;
+      }
+      .border-custom-bottom {
+        border-bottom: 2px solid var(--cor-media) !important;
+      }
+
+      /* Links da Sidebar */
+      .text-custom-link {
+        color: var(--cor-escura) !important;
+        transition: color 0.2s;
+      }
+      .text-custom-link:hover {
+        color: var(--cor-clara) !important;
+      }
+
+      /* PADRONIZAÇÃO DAS IMAGENS DOS CARDS COM EFEITO DE EXPANSÃO (HOVER) */
+      .card-img-padrao {
+        height: 200px;           /* Altura fixa perfeita para celulares, tablets e desktop */
+        object-fit: cover;       /* Estado normal: corta a imagem proporcionalmente sem distorcer */
+        width: 100%;             
+        background-color: #f8f9fa; /* Fundo neutro caso a imagem original seja menor no zoom */
+        transition: object-fit 0.3s ease, transform 0.3s ease; /* Transição suave de 0.3 segundos */
+      }
+
+      /* Quando passa o mouse por cima do card ou da imagem */
+      .card:hover .card-img-padrao {
+        object-fit: contain;     /* Altera para mostrar a imagem inteira sem NENHUM corte */
+        transform: scale(1.02);  /* Dá um zoom bem sutil no card para dar efeito de foco */
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="awoo_eua.gif" alt="Logótipo Awoo" height="35" class="d-inline-block align-text-top">
+            <strong>Moji Maga Memes</strong>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#meuMenu" aria-controls="meuMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="meuMenu">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="#">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Mundo</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Tendencias</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Comericiais</a></li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Pesquisar notícias..." aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Pesquisar</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+<div class="hero-section py-5 mb-5 bg-custom-dark text-white">
+  <div class="container">
+    <div class="row align-items-center g-4 text-center text-lg-start">
+      
+      <div class="col-lg-5">
+        <span class="badge badge-custom mb-3">Manchete Principal</span>
+        <div class="mb-3 mb-lg-0">
+          <img src="imagemimga.png" class="img-fluid rounded shadow-lg w-100" alt="Meme Antigo vs Novo" style="max-height: 400px; object-fit: cover;">
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <h1 class="display-4 fw-bold mb-3">A Decadencia Silenciosa dos Memes</h1>
+        
+        <p class="lead mb-4">
+          Como o TikTok e o Instagram mataram os memes clássicos e coroaram o absurdo
+        </p>
+        
+        <a href="#" class="btn btn-custom-primary btn-lg px-4 shadow">Ler mais</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+    <div class="container">
+      <div class="row">
+        
+        <main class="col-lg-8">
+          <h2 class="mb-4 pb-2 border-custom-bottom" style="color: var(--cor-escura);">Últimas Notícias</h2>
+          
+          <div class="row">
+            
+            <div class="col-md-6 mb-4">
+              <div class="card h-100 shadow-sm">
+                <img src="fake_png.png" class="card-img-top card-img-padrao" alt="Notícia 1">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title" style="color: var(--cor-escura);">Classico Atemporal</h5>
+                  <p class="card-text text-muted">Como um meme que definiu uma geração se perdeu em apenas 10 anos.</p>
+                  <a href="#" class="btn btn-sm btn-custom-outline mt-auto">Aceder artigo</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="card h-100 shadow-sm">
+                <img src="cat_sus.jpg" class="card-img-top card-img-padrao" alt="Notícia 2">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title" style="color: var(--cor-escura);">Da fama a trama</h5>
+                  <p class="card-text text-muted">Como uma iniciativa para ajudar gatos de rua levou a caça de varias chineses que viviam de maltratar esses animais.</p>
+                  <a href="#" class="btn btn-sm btn-custom-outline mt-auto">Aceder artigo</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="card h-100 shadow-sm">
+                <img src="2000_yard_stare.jpg" class="card-img-top card-img-padrao" alt="Notícia 3">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title" style="color: var(--cor-escura);">Memes como reflexo da mente</h5>
+                  <p class="card-text text-muted">Por que cada vez mais pessoas se identificam com memes.</p>
+                  <a href="#" class="btn btn-sm btn-custom-outline mt-auto">Aceder artigo</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="card h-100 shadow-sm">
+                <img src="awoo_alot_of_work.png" class="card-img-top card-img-padrao" alt="Notícia 4">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title" style="color: var(--cor-escura);">Mercado e figurinhas</h5>
+                  <p class="card-text text-muted">Em que momento ficou normalizado o uso de gifs e figurinhas em grupos de trabalho.</p>
+                  <a href="#" class="btn btn-sm btn-custom-outline mt-auto">Aceder artigo</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="card h-100 shadow-sm">
+                <img src="trash7.jpg" class="card-img-top card-img-padrao" alt="Notícia 5">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title" style="color: var(--cor-escura);">O Humor esta ficando velho?</h5>
+                  <p class="card-text text-muted">Por que existe esse sentimento contraditorio para os amantes de memes.</p>
+                  <a href="#" class="btn btn-sm btn-custom-outline mt-auto">Aceder artigo</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="card h-100 shadow-sm">
+                <img src="doggg.jpg" class="card-img-top card-img-padrao" alt="Notícia 6">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title" style="color: var(--cor-escura);">Animais e Memes</h5>
+                  <p class="card-text text-muted">Vamos relembrar do melhor amigo do homen que já não estão entre nós.</p>
+                  <a href="#" class="btn btn-sm btn-custom-outline mt-auto">Aceder artigo</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </main>
+
+        <aside class="col-lg-4 mt-4 mt-lg-0">
+          <div class="bg-white p-4 rounded mb-4 shadow-sm border">
+            <h4 class="mb-3" style="color: var(--cor-escura);">Portal VIP</h4>
+            <p class="text-muted">Receba alertas em primeira mão e aceda a conteúdos exclusivos das nossas redações.</p>
+            
+            <button type="button" class="btn btn-custom-primary w-100 py-2" data-bs-toggle="modal" data-bs-target="#modalNewsletter">
+              Assinar Newsletter
+            </button>
+          </div>
+
+          <div class="card shadow-sm">
+            <div class="card-header bg-custom-dark text-white fw-bold">
+              Mais Lidas da Semana
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><a href="#" class="text-decoration-none text-custom-link fw-semibold">1. Maga Awoo vinda das profindezas da internet</a></li>
+              <li class="list-group-item"><a href="#" class="text-decoration-none text-custom-link fw-semibold">2. É oficial a primeira geração de Brainrot finalmente esta morta</a></li>
+              <li class="list-group-item"><a href="#" class="text-decoration-none text-custom-link fw-semibold">3. Conheça Pepe the Frog e entenda como e remorço de uma comunidade matou um meme</a></li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalNewsletter" tabindex="-1" aria-labelledby="modalNewsletterLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered"> 
+        <div class="modal-content">
+          <div class="modal-header bg-custom-dark text-white"> <h5 class="modal-title" id="modalNewsletterLabel">Assinar Newsletter</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            
+            <form>
+              <div class="mb-3">
+                <label for="nomeUsuario" class="form-label fw-semibold" style="color: var(--cor-escura);">Nome Completo</label>
+                <input type="text" class="form-control" id="nomeUsuario" placeholder="Digite o seu nome" required>
+              </div>
+              <div class="mb-3">
+                <label for="emailUsuario" class="form-label fw-semibold" style="color: var(--cor-escura);">Endereço de E-mail</label>
+                <input type="email" class="form-control" id="emailUsuario" placeholder="exemplo@dominio.com" required>
+                <div class="form-text">Garantimos a total privacidade dos seus dados cadastrados.</div>
+              </div>
+              <div class="modal-footer px-0 pb-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-custom-primary">Submeter Subscrição</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-custom-dark text-light text-center p-4 mt-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-4 text-md-start mb-3 mb-md-0">
+            <a href="#" class="text-light text-decoration-none me-3 opacity-75">Termos de Uso</a>
+            <a href="#" class="text-light text-decoration-none opacity-75">Políticas</a>
+          </div>
+          <div class="col-md-4 mb-3 mb-md-0">
+            <p class="mb-0 opacity-75">&copy; 2026 Portal Awoo. Direitos Reservados.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
