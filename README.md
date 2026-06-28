@@ -1,5 +1,7 @@
 # 🌐 Atividade_Bootstrap_5
 
+> 🔗 **Acesse o site rodando online aqui:** [https://viniciussendoski.github.io/Atividade_Bootstrap_5/](https://viniciussendoski.github.io/Atividade_Bootstrap_5/)
+
 > Repositório destinado ao desenvolvimento do trabalho prático sobre a ferramenta de estilização e computação web **Bootstrap 5**.
 
 Este projeto consiste em um portal de notícias moderno e totalmente responsivo voltado à cultura da internet, intitulado **Moji Maga Memes** (ou *Portal Awoo*). A aplicação explora componentes nativos do Bootstrap combinados com customizações avançadas de CSS para criar uma experiência de usuário rica e fluida.
